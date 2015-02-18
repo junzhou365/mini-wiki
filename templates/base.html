@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="/static/style.css" />
+
+  <title>Mini Wiki</title>
+</head>
+
+<body>
+  <a href="/" class="main-title">
+    Mini Wiki
+  </a>
+
+  <div class="login-area">
+    <a class="login-link" href="/_history{{ path }}">history</a>
+    |
+    {% if user %}
+      <a class="login-link" href="/_edit{{path}}">edit</a>
+      |
+      {{user.name}} (<a class="login-link" href="/logout">logout</a>)
+    {% else %}
+      <a class="login-link" href="/login">login</a>
+      |
+      <a class="login-link" href="/signup">signup</a>
+    {% endif %}
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"> </div>
+      <div id="content" class="col-lg-10">
+      {% block content %}
+      {% endblock %}
+      </div>
+      <div class="col-lg-1"> </div>
+    </div>
+  </div>
+</body>
+<script>$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</script>
+
+</html>
+
+
+
+

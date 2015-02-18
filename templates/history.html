@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table class="table table-striped table-bordered showItems"> 
+    <thead>
+    <tr>
+      <td id="edit">Edit</td>
+      <td>Created Time</td>
+      <td>Subject</td>
+      <td>Content</td>
+    </tr>
+    </thead>
+  {% for entry in entries %}
+    <tbody>
+    <tr>
+      <td><a href='/_edit{{path}}?q={{entry.key().id()}}'>edit</a></td>
+      <td>{{entry.created.strftime("%m/%d/%Y")}}</td>
+      <td>{{entry.subject}}</td>
+      <td>{{entry.content}}</td>
+    </tr>
+    </tbody>
+  {% endfor %}
+  </table> 
+  
+  
+{% endblock %}

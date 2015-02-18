@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+      <link type="text/css" rel="stylesheet" href="/static/style.css" />
+      <title>Edit Post</title>
+    </head>
+    <body>
+      <div class="container">
+	<div class="row">
+	  <div class="col-md-1">
+	  </div>
+	  <div class="col-md-6">
+	    <h1>Edit Post</h1>
+	      <form method="post">
+		<div class="row">
+		  <div class="col-md-12">
+		    <label for="Subject">Subject</label>
+		    <input name="subject" type="text" class="form-control" placeholder="Subject" value="{{subject}}">
+		  </div>
+		</div>
+		<br>
+		<div class="row">
+		  <div class="col-md-12">
+		    <label for="Content">Content</label>
+		    <textarea name="content" class="form-control" rows="10" placeholder="Enter some text...">{{content}}</textarea>
+		  </div>
+		</div>
+		<div class="error"> {{ error }}</div>
+		</br>
+		<button type="submit" class="btn btn-default">Submit</button>
+	      </form>
+	  </div>
+	</div>
+      </div>
+    </body>
+</html>
+
